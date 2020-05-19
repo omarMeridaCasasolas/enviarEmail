@@ -7,8 +7,6 @@ require 'vendor/autoload.php';
 
 $destino=$_POST['correo'];
 $mensaje=$_POST['mensaje'];
-echo $destino;
-echo $mensaje;
 $from = new SendGrid\Email(null, "https://convocatoriasumss.herokuapp.com/");
 $subject = "Aqui le pasamos su password del sitio ";
 $to = new SendGrid\Email(null, $destino);
