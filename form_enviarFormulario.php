@@ -7,7 +7,7 @@ require 'vendor/autoload.php';
 
 $destino=$_POST['correo'];
 $mensaje=$_POST['mensaje'];
-$from = new SendGrid\Email(null, "https://convocatoriasumss.herokuapp.com/");
+$from = new SendGrid\Email(null, "software.development.innovation@gmail.com");
 $subject = "Aqui le pasamos su password del sitio ";
 $to = new SendGrid\Email(null, $destino);
 $content = new SendGrid\Content("text/plain", $mensaje);
@@ -21,5 +21,5 @@ echo $response->statusCode();
 echo $response->headers();
 echo $response->body();
     
-//header("Location:index.php");
+header("Location:index.php");
 ?>
