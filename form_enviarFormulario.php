@@ -8,9 +8,9 @@ require 'vendor/autoload.php';
 $destino=$_POST['correo'];
 $mensaje=$_POST['mensaje'];
 $from = new SendGrid\Email(null, "ConvocatoriaUMSS@email.com");
-$subject = "Aqui le pasamos su password del sitio ";
+$subject = "Recuperacion de password ";
 $to = new SendGrid\Email(null, $destino);
-$content = new SendGrid\Content("text/plain", $mensaje);
+$content = new SendGrid\Content("text/plain","Hemos visto que ha tenido problemas para recordar su password ".$mensaje);
 $mail = new SendGrid\Mail($from, $subject, $to, $content);
 
 $apiKey = getenv('SENDGRID_API_KEY');
