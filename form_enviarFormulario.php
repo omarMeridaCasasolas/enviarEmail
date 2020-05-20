@@ -10,7 +10,7 @@ $mensaje=$_POST['mensaje'];
 $from = new SendGrid\Email(null, "ConvocatoriaUMSS@email.com");
 $subject = "Recuperacion de password ";
 $to = new SendGrid\Email(null, $destino);
-$content = new SendGrid\Content("text/plain","Hemos visto que ha tenido problemas para recordar su password ".$mensaje);
+$content = new SendGrid\Content("text/plain","Hemos visto que ha tenido problemas para recordar su password ".<strong>$mensaje</strong>);
 $mail = new SendGrid\Mail($from, $subject, $to, $content);
 
 $apiKey = getenv('SENDGRID_API_KEY');
